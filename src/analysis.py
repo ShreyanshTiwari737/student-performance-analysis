@@ -24,8 +24,8 @@ def insights(df):
     avgexc= df[df['Performance']=='Excellent']['StudyHours'].mean()
     avgni= df[df['Performance']=='Needs Improvement']['StudyHours'].mean()
     pctlow= (df['Marks'] < 50).mean() * 100
-    print(f"1. Correlation of StudyHours with Marks: {corr_study:.2f}")
-    print(f"2. Correlation of Attendance with Marks: {corr_att:.2f}")
-    print(f"3. Avg study hours — Excellent: {avg_exc:.1f} hrs, Needs Improvement: {avg_ni:.1f} hrs")
-    print(f"4. {pct_low:.1f}% of students scored below 50")
+    print(f"1. Correlation of StudyHours with Marks: {corstudy:.2f}")
+    print(f"2. Correlation of Attendance with Marks: {coratt:.2f}")
+    print(f"3. Avg study hours — Excellent: {avgexc:.1f} hrs, Needs Improvement: {avgni:.1f} hrs")
+    print(f"4. {pctlow:.1f}% of students scored below 50")
     print(f"5. EffortScore (StudyHours × Attendance) top quartile avg marks: "f"{df[df['EffortScore'] >= df['EffortScore'].quantile(0.75)]['Marks'].mean():.1f}")
